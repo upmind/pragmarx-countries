@@ -2,11 +2,11 @@
 
 namespace PragmaRX\Countries\Package\Services;
 
-use IlluminateAgnostic\Str\Support\Str;
-use PragmaRX\Coollection\Package\Coollection;
+use Illuminate\Support\Str;
 use PragmaRX\Countries\Package\Data\Repository;
 use PragmaRX\Countries\Package\Services\Cache\Service as Cache;
 use PragmaRX\Countries\Package\Support\Base;
+use PragmaRX\Countries\Package\Support\Coollection;
 use PragmaRX\Countries\Update\Updater;
 
 class Countries extends Base
@@ -62,10 +62,10 @@ class Countries extends Base
      */
     public function __construct(
         $config = null,
-        Cache $cache = null,
-        Helper $helper = null,
-        Hydrator $hydrator = null,
-        Repository $repository = null
+        ?Cache $cache = null,
+        ?Helper $helper = null,
+        ?Hydrator $hydrator = null,
+        ?Repository $repository = null
     ) {
         $a = new \PragmaRX\Countries\Package\Services\Cache\Service();
 
@@ -177,7 +177,7 @@ class Countries extends Base
      * @param  Cache|null  $cache
      * @return Cache
      */
-    protected function instantiateCache(Cache $cache = null)
+    protected function instantiateCache(?Cache $cache = null)
     {
         if (\is_null($this->cache) || ! \is_null($cache)) {
             $this->cache = ! \is_null($cache)
@@ -209,7 +209,7 @@ class Countries extends Base
      * @param  Helper|null  $helper
      * @return Helper
      */
-    protected function instantiateHelper(Helper $helper = null)
+    protected function instantiateHelper(?Helper $helper = null)
     {
         $this->helper = \is_null($helper)
             ? (\is_null($this->helper)
@@ -226,7 +226,7 @@ class Countries extends Base
      * @param  Hydrator|null  $hydrator
      * @return Hydrator
      */
-    protected function instantiateHydrator(Hydrator $hydrator = null)
+    protected function instantiateHydrator(?Hydrator $hydrator = null)
     {
         if (\is_null($this->hydrator) || ! \is_null($hydrator)) {
             $this->hydrator = ! \is_null($hydrator)
