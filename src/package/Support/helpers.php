@@ -1,6 +1,7 @@
 <?php
 
 use PragmaRX\Countries\Package\Support\Collection;
+use PragmaRX\Countries\Package\Support\Coollection;
 
 if (! function_exists('array_sort_by_keys_recursive')) {
     /**
@@ -18,6 +19,23 @@ if (! function_exists('array_sort_by_keys_recursive')) {
 
             array_walk($array, 'array_sort_by_keys_recursive');
         }
+    }
+}
+
+if (! function_exists('coollect')) {
+    /**
+     * Create a Coollection from the given value.
+     *
+     * @param  mixed  $value
+     * @return \PragmaRX\Countries\Package\Support\Coollection
+     */
+    function coollect($value = null)
+    {
+        if ($value instanceof Coollection) {
+            return $value;
+        }
+
+        return new Coollection($value);
     }
 }
 

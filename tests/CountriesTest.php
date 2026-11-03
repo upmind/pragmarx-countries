@@ -3,8 +3,8 @@
 namespace PragmaRX\Countries\Tests\Service;
 
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
-use PragmaRX\Coollection\Package\Coollection;
 use PragmaRX\Countries\Package\Countries;
+use PragmaRX\Countries\Package\Support\Coollection;
 use PragmaRX\Countries\Update\Config as ServiceConfig;
 use PragmaRX\Countries\Update\Helper;
 use PragmaRX\Countries\Update\Updater;
